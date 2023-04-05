@@ -1,0 +1,76 @@
+﻿<UserControl x:Name="registerView" x:Class="Nexa.Register"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Nexa"
+             mc:Ignorable="d" 
+             d:DesignHeight="486" d:DesignWidth="346">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <LinearGradientBrush x:Key="ButtonBackground" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#AA00FF" Offset="0"/>
+                <GradientStop Color="#FF00E0" Offset="0.6"/>
+            </LinearGradientBrush>
+            <Style x:Key="RoundedButton1" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid>
+                                <Border Background="{StaticResource ButtonBackground}" VerticalAlignment="Stretch" CornerRadius="13" HorizontalAlignment="Stretch"/>
+                                <Border x:Name="BorderPressed"  Opacity="0" Background="#AA00FF" VerticalAlignment="Stretch" CornerRadius="13" HorizontalAlignment="Stretch"/>
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="MainContent" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="BorderPressed" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="BorderPressed" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="RegisterGrid" Margin="0,-27,0,0">
+        <Button Style="{DynamicResource RoundedButton1}" x:Name="RegisterBtn" Content="Register" Height="33" Margin="108,417,108,0" VerticalAlignment="Top" Click="Button_Click_1" Foreground="White"/>
+        <TextBox x:Name="RegisterUser" Height="31" Margin="65,302,65,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top"
+                 FontSize="20"
+                 BorderBrush="{x:Null}"
+                 Background="#FFF6F6F6"
+                 Foreground="DarkGray"
+                 TextChanged="RegisterUser_TextChanged"
+                 TextAlignment="Center"/>
+        <TextBox x:Name="RegisterPass" Height="31" Margin="65,338,65,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"
+            FontSize="20"
+            BorderBrush="{x:Null}"
+            Background="#FFF6F6F6"
+            Foreground="DarkGray"
+            TextChanged="RegisterPass_TextChanged"
+            TextAlignment="Center"/>
+        <TextBox x:Name="RegisterPassConf" Height="31" Margin="65,374,65,0" TextWrapping="Wrap" Text="Confirm Password" VerticalAlignment="Top"
+            FontSize="20"
+            BorderBrush="{x:Null}"
+            Background="#FFF6F6F6"
+            Foreground="DarkGray"
+            TextChanged="RegisterPassConf_TextChanged"
+            TextAlignment="Center"/>
+        <TextBox x:Name="RStatus" HorizontalAlignment="Left" Height="46" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" IsEnabled="False" SelectionBrush="{x:Null}" Background="{x:Null}" Foreground="Red"/>
+        <Image Height="220" Margin="63,49,63,0" VerticalAlignment="Top" Source="/Nexa Logo Rounded Fixed.png"/>
+        <TextBlock x:Name="LoginTxt" Height="28" Margin="128,455,128,0" TextWrapping="Wrap" Text=" Already a user?" VerticalAlignment="Top" Foreground="#FFA0A0A0" MouseLeftButtonDown="LoginBtn"/>
+        <Image x:Name="NexaTxt" Height="40" Margin="70,257,70,0" VerticalAlignment="Top" Source="/Nexa Text Gradient 3.png" Visibility="Visible"/>
+    </Grid>
+</UserControl>

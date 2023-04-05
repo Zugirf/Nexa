@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>nexa.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>2</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="nexa Chatroom2.png" />
+    <None Remove="Nexa Darkmode Trans.png" />
+    <None Remove="Nexa Lightmode Trans.png" />
+    <None Remove="Nexa Lightmode Trans2.png" />
+    <None Remove="Nexa Lightmode Trans3.png" />
+    <None Remove="Nexa Lightmode Trans4.png" />
+    <None Remove="Nexa Logo Rounded Fixed.png" />
+    <None Remove="Nexa logo Rounded Shadow 3.png" />
+    <None Remove="Nexa Messages.png" />
+    <None Remove="Nexa Profile.png" />
+    <None Remove="Nexa Send Icon Darkmode.png" />
+    <None Remove="Nexa Send Icon Whitemode.png" />
+    <None Remove="Nexa Send Icon.png" />
+    <None Remove="Nexa Text Dark.png" />
+    <None Remove="Nexa Text Gradient 2.png" />
+    <None Remove="Nexa Text Gradient 3.png" />
+    <None Remove="Nexa Text Gradient Shadow.png" />
+    <None Remove="Nexa Text Light.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="SocketIOClient" Version="3.0.8" />
+    <PackageReference Include="Uno.UI" Version="4.8.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="nexa Chatroom2.png" />
+    <Resource Include="Nexa Darkmode Trans.png" />
+    <Resource Include="Nexa Lightmode Trans.png" />
+    <Resource Include="Nexa Lightmode Trans2.png" />
+    <Resource Include="Nexa Lightmode Trans3.png" />
+    <Resource Include="Nexa Lightmode Trans4.png" />
+    <Resource Include="Nexa Logo Rounded Fixed.png" />
+    <Resource Include="Nexa logo Rounded Shadow 3.png" />
+    <Resource Include="Nexa Messages.png" />
+    <Resource Include="Nexa Profile.png" />
+    <Resource Include="Nexa Send Icon Darkmode.png" />
+    <Resource Include="Nexa Send Icon Whitemode.png" />
+    <Resource Include="Nexa Send Icon.png" />
+    <Resource Include="Nexa Text Dark.png" />
+    <Resource Include="Nexa Text Gradient 2.png" />
+    <Resource Include="Nexa Text Gradient 3.png" />
+    <Resource Include="Nexa Text Gradient Shadow.png" />
+    <Resource Include="Nexa Text Light.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
